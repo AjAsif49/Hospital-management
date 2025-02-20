@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/',[HomeController::class, 'index']);
 
@@ -17,3 +18,8 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+Route::get('/add_doctors',[AdminController::class, 'AddDoctor']);
+Route::post('/upload_doctor',[AdminController::class, 'UploadDoctor']);
+
